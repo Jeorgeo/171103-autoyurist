@@ -17,19 +17,54 @@
 --------------------------------------------------------------*/
 
 @font-face {
-  font-family: 'OpenSans'; /* Гарнитура шрифта */
-  src: url( "fonts/OpenSans-Regular.ttf" ); /* Путь к файлу со шрифтом */
+  font-family: 'plumb-regular'; /* Гарнитура шрифта */
+  src: url( "../fonts/plumb-regular.ttf" ); /* Путь к файлу со шрифтом */
 }
 
 @font-face {
-   font-family: 'OpenSansExtraBold'; /* Гарнитура шрифта */
-   src: url( "fonts/OpenSans-ExtraBold.ttf" ); /* Путь к файлу со шрифтом */
-  }
+  font-family: 'plumb-medium'; /* Гарнитура шрифта */
+  src: url( "../fonts/plumb-medium.ttf" ); /* Путь к файлу со шрифтом */
+}
 
 @font-face {
-   font-family: 'OpenSansSemibold'; /* Гарнитура шрифта */
-   src: url( "fonts/OpenSans-Semibold.ttf" ); /* Путь к файлу со шрифтом */
-  }
+  font-family: 'plumb-light'; /* Гарнитура шрифта */
+  src: url( "../fonts/plumb-light.ttf" ); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+  font-family: 'plumb-bold'; /* Гарнитура шрифта */
+  src: url( "../fonts/plumb-bold.ttf" ); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+  font-family: 'plumbc-black'; /* Гарнитура шрифта */
+  src: url( "../fonts/plumbc-black.ttf" ); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+  font-family: 'plumbc-regular'; /* Гарнитура шрифта */
+  src: url( "../fonts/plumbc-regular.ttf" ); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+  font-family: 'plumbc-medium'; /* Гарнитура шрифта */
+  src: url( "../fonts/plumbc-medium.ttf" ); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+  font-family: 'plumbc-light'; /* Гарнитура шрифта */
+  src: url( "../fonts/plumbc-light.ttf" ); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+  font-family: 'plumbc-bold'; /* Гарнитура шрифта */
+  src: url( "../fonts/plumbc-bold.ttf" ); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+  font-family: 'plumbc-black'; /* Гарнитура шрифта */
+  src: url( "../fonts/plumbc-black.ttf" ); /* Путь к файлу со шрифтом */
+}
 
 
 /*--------------------------------------------------------------
@@ -78,18 +113,8 @@ html, body {
 	height: 100%;
 	min-width: 100%;
 	min-height: 100%;
-	font-family: 'OpenSans', sans-serif;
-  color: #404040;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-size: 1em;
-  font-family: 'OpenSansSemibold', serif;
+	font-family: 'plumb-regular','Arial' ,sans-serif;
+  color: #000000;
 }
 
 ul {
@@ -121,42 +146,13 @@ img {
   clear: both;
 }
 
-.cols {
-  margin: 1em auto;
-  box-sizing: border-box;
-}
-
-.cols.col-1,
-.cols.col-2,
-.cols.col-3,
-.cols.col-4,
-.cols.col-5,
-.cols.col-6,
-.cols.col-7,
-.cols.col-8,
-.cols.col-9,
-.cols.col-10,
-.cols.col-11,
-.cols.col-12 {
-  width: 100%;
-}
-
 .color-text {
-  color: #e93a1d;
+  color: #ff0000;
 }
 
 @media (min-width: 768px) {
   .container {
     max-width: 750px;
-  }
-
-  .cols {
-    float: left;
-    margin: 1em 0;
-  }
-
-  .cols.col-6-md {
-    width: 50%;
   }
 
 }
@@ -166,9 +162,181 @@ img {
 # Header
 --------------------------------------------------------------*/
 
+header {
+  padding: 1.2em 0 0 0;
+}
+
+header .header-logo {
+  float: left;
+  width: 20%;
+  max-width: 90px;
+  margin-top: 0.4em;
+  margin-right: 1.4em;
+}
+
+header .header-title {
+  float: left;
+  width: 70%;
+  padding-left: 1.2em;
+  border-left: 1px solid #817e7e;
+  box-sizing: border-box;
+  font-family: 'plumb-medium', 'Arial', sans-serif;
+}
+
+.contacts-box a {
+  display: block;
+  width: 100%;
+  font-size: 1.6em;
+}
+
+.contacts-box a:nth-child(1) {
+  display: none;
+}
+
+.contacts-box p {
+  display: block;
+  margin: 0;
+  font-size: 0.65em;
+  color: #817e7e;
+}
+
+.title-box h1 {
+  margin: 0.2em 0 0;
+  font-size: 1.4em;
+}
+
+.title-box h1 span {
+  display: block;
+  font-size: 0.65em;
+  color: #817e7e;
+  font-family: 'plumb-light', 'Arial', sans-serif;
+}
+
+.main-header h2 {
+  float: left;
+  margin: 0.5em 0;
+  text-transform: uppercase;
+  font-size: 1.4em;
+  font-family: 'plumbc-regular', 'Arial', sans-serif;
+}
+
+.main-header h2 .color-text {
+  font-family: 'plumbc-bold', 'Arial', sans-serif;
+}
+
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+
+body {
+  background: url('../img/bg_main-s.jpg') no-repeat 50% 0;
+  background-size: cover;
+}
+
+.main-screen .wrap {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.test-screen,
+.st-list,
+.btn-ytplay {
+  display: none;
+}
+
+.box-screen {
+  width: 50%;
+  float: left;
+  min-height: 125px;
+  box-sizing: border-box;
+}
+
+.btn-st {
+  display: block;
+  width: 100%;
+  max-width: 100px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-family: 'plumbc-regular', 'Arial', sans-serif;
+}
+
+.btn-st.left-side {
+  float: left;
+  padding-right: 20%;
+}
+
+.btn-st.right-side {
+  float: right;
+  padding-left: 10%;
+}
+
+.btn-st span {
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 0.5em auto;
+  border: 4px solid #f2eae8;
+  border-radius: 50%;
+  background-color: #504f4f;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.btn-st:hover span,
+.btn-st:active span {
+  background-color: #ff0000;
+}
+
+.btn-st span.icon_police {
+  background-image: url('../img/icon_police.png');
+}
+
+.btn-st span.icon_health {
+  background-image: url('../img/icon_health.png');
+}
+
+.btn-st span.icon_cars {
+  background-image: url('../img/icon_cars.png');
+}
+
+.btn-st span.icon_weight {
+  background-image: url('../img/icon_weight.png');
+}
+
+.main-screen .btn-phone {
+  position: absolute;
+  top: 25%;
+  left: 36%;
+  z-index: 55;
+  display: block;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  font-size: 0;
+  background: #ff0000 url('../img/icon_phone-w.png') no-repeat 50% 50%;
+}
+
+.btn-oq {
+  display: block;
+  width: 100%;
+  margin: auto;
+  padding: 0.7em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-family: 'plumbc-regular', 'Arial', sans-serif;
+  border-radius: 3px;
+  color: #ffffff;
+  background-color: #ff0000;
+}
+
+
+
+
+
 
 /*--------------------------------------------------------------
 # Footer
@@ -207,53 +375,6 @@ img {
     max-width: 960px;
   }
 
-  .cols.col-1 {
-    width: 8.3333%;
-  }
-
-  .cols.col-2 {
-    width: 16.6666%;
-  }
-
-  .cols.col-3 {
-    width: 24.9999%;
-  }
-
-  .cols.col-4 {
-    width: 33.3332%;
-  }
-
-  .cols.col-5 {
-    width: 41.6665%;
-  }
-
-  .cols.col-6 {
-    width: 49.9998%;
-  }
-
-  .cols.col-7 {
-    width: 58.3331%;
-  }
-
-  .cols.col-8 {
-    width: 66.6664%;
-  }
-
-  .cols.col-9 {
-    width: 74.9997%;
-  }
-
-  .cols.col-10 {
-    width: 83.333%;
-  }
-
-  .cols.col-11 {
-    width: 91.663%;
-  }
-
-  .cols.col-12 {
-    width: 100%;
-  }
 
   /*--------------------------------------------------------------
   # Header
