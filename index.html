@@ -44,8 +44,8 @@
           <div class="wrap clearfix">
             <div class="box-screen box-one">
               <a href="" class="btn-st left-side">
-                <span class="icon_health"></span>
-                Приченение вреда здоровью
+                <i class="icon_health"></i>
+                <span class="icon_text">Приченение вреда здоровью</span>                
               </a>
               <div class="st-list">
                 <ul>
@@ -55,8 +55,8 @@
             </div>
             <div class="box-screen box-two">
               <a href="" class="btn-st right-side">
-                <span class="icon_police"></span>
-                Лишение прав
+                <i class="icon_police"></i>
+                <span class="icon_text">Лишение прав</span>
               </a>
               <div class="st-list">
                 <ul>
@@ -69,8 +69,8 @@
             </div>
             <div class="box-screen box-three">
               <a href="" class="btn-st left-side">
-                <span class="icon_weight"></span>
-                Перегруз
+                <i class="icon_weight"></i>
+                <span class="icon_text">Перегруз</span>
               </a>
               <div class="st-list">
                 <ul>
@@ -80,8 +80,8 @@
             </div>
             <div class="box-screen box-four">
               <a href="" class="btn-st right-side">
-                <span class="icon_cars"></span>
-                ДТП
+                <i class="icon_cars"></i>
+                <span class="icon_text">ДТП</span>
               </a>
               <div class="st-list">
                 <ul>
@@ -93,7 +93,7 @@
             <a href="tel:88432515005" class="btn-phone">8 843 251-50-05</a>
           </div>
           <a href="#" class="btn-oq">Другой вопрос</a>
-        </div>        
+        </div>
       </section>
       <section class="test-screen health-screen">
         <div class="screen-header">
@@ -512,11 +512,17 @@
       </section>
     </main>
     <footer>
-      <form action="" class="cons" method="post">
-        <input id="name" class="cons-name" type="text" name="name">
-        <input id="phone" class="cons-phone" type="text" name="phone">
-        <button type="submit" name="submit">Получить консультацию</button>
-      </form>
+      <div class="container">
+        <form action="" class="cons" method="post">
+          <label for="name" class="cons-name">
+            <input id="name" type="text" name="name" placeholder="Введите имя">
+          </label>
+          <label for="phone" class="cons-phone">
+            <input id="phone"  type="text" name="phone" placeholder="Введите телефон">
+          </label>
+          <button type="submit" name="submit">Получить консультацию</button>
+        </form>
+      </div>
     </footer>
     <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
     <script type="text/javascript" src="js/jquery-migrate-1.4.1.min.js"></script>

@@ -150,13 +150,6 @@ img {
   color: #ff0000;
 }
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 750px;
-  }
-
-}
-
 
 /*--------------------------------------------------------------
 # Header
@@ -238,6 +231,7 @@ body {
   position: relative;
   width: 100%;
   max-width: 400px;
+  margin: auto;
 }
 
 .test-screen,
@@ -273,7 +267,7 @@ body {
   padding-left: 10%;
 }
 
-.btn-st span {
+.btn-st i {
   display: block;
   width: 60px;
   height: 60px;
@@ -285,24 +279,24 @@ body {
   background-position: 50% 50%;
 }
 
-.btn-st:hover span,
-.btn-st:active span {
+.btn-st:hover i,
+.btn-st:active i {
   background-color: #ff0000;
 }
 
-.btn-st span.icon_police {
+.btn-st i.icon_police {
   background-image: url('../img/icon_police.png');
 }
 
-.btn-st span.icon_health {
+.btn-st i.icon_health {
   background-image: url('../img/icon_health.png');
 }
 
-.btn-st span.icon_cars {
+.btn-st i.icon_cars {
   background-image: url('../img/icon_cars.png');
 }
 
-.btn-st span.icon_weight {
+.btn-st i.icon_weight {
   background-image: url('../img/icon_weight.png');
 }
 
@@ -319,28 +313,68 @@ body {
   background: #ff0000 url('../img/icon_phone-w.png') no-repeat 50% 50%;
 }
 
-.btn-oq {
+.btn-oq,
+.cons button {
   display: block;
   width: 100%;
   margin: auto;
-  padding: 0.7em;
+  padding: 0.9em 0;
   text-align: center;
   text-transform: uppercase;
   font-size: 1.2em;
   font-family: 'plumbc-regular', 'Arial', sans-serif;
+  border: none;
   border-radius: 3px;
   color: #ffffff;
   background-color: #ff0000;
 }
 
-
-
-
-
-
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+
+footer {
+  margin-top: 1em;
+  padding: 0.01em 0 1em 0;
+  background-color: #504f4f;
+}
+
+.cons input {
+  display: block;
+  width: 100%;
+  margin: 1em auto;
+  padding: 1em;
+  padding-left: 3em;
+  font-size: 1.1em;
+  box-sizing: border-box;
+  border: none;
+  color: #999999;
+  border-radius: 3px;
+  box-shadow: inset 0 2px 5px 1px #8d8d8d;
+}
+
+.cons label {
+  position: relative;
+}
+
+.cons .cons-name::after,
+.cons .cons-phone::after {
+  position: absolute;
+  top: 32px;
+  left: 16px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  content: '';
+  background: url('../img/icon_phone.png') no-repeat 50% 50%;
+  background-size: contain;
+  opacity: 0.8;
+}
+
+.cons .cons-phone::after {
+  background: url('../img/icon_man.png') no-repeat 50% 50%;
+  background-size: contain;
+}
 
 
 /*============== for tablets 768px ===========================*/
@@ -380,13 +414,184 @@ body {
   # Header
   --------------------------------------------------------------*/
 
+  header {
+    position: relative;
+  }
+
+  header::after {
+    position: absolute;
+    top: -0.5em;
+    left: 5%;
+    right: 5%;
+    height: 1em;
+    border-radius: 8px;
+    background-color: #504f4f;
+    content: '';
+  }
+
+  header .header-logo {
+    margin-top: 0;
+    margin-right: 0;
+  }
+
+  .logo-box {
+    display: block;
+    width: 70%;
+    margin: auto;
+  }
+
+  header .header-title {
+    width: 90%;
+    float: right;
+  }
+
+  header .title-box {
+    float: left;
+    width: 50%;
+    font-size: 1.2em;
+    font-family: 'plumbc-regular', 'Arial', sans-serif;
+  }
+
+  .title-box h1 {
+    margin: 0.5em 0;
+  }
+
+  header .contacts-box {
+    float: right;
+    width: 50%;
+    margin-top: 1em;
+    text-align: right;
+  }
+
+  header .contacts-box a:nth-child(1) {
+    display: block;
+  }
+
+  .main-header h2 {
+    display: none;
+  }
+
   /*--------------------------------------------------------------
   # Content
   --------------------------------------------------------------*/
 
+  body {
+    background: url('../img/bg_main.jpg') no-repeat 50% 0;
+    background-size: cover;
+  }
+
+  .main-screen .wrap {
+    position: relative;
+    width: 550px;
+    height: 450px;
+    background: url('../img/bg_screen.png') no-repeat 50% 0;
+    background-size: contain;
+  }
+
+  .main-screen .btn-phone {
+    display: none;
+  }
+
+  .box-screen {
+    position: absolute;
+    width: 80%;
+  }
+
+  .box-screen.box-one {
+    top: 13%;
+    right: 96%;
+  }
+
+  .box-screen.box-two {
+    top: 13%;
+    left: 96%;
+  }
+
+  .box-screen.box-three {
+    bottom: 13%;
+    right: 95%;
+  }
+
+  .box-screen.box-four {
+    bottom: 13%;
+    left: 95%;
+  }
+
+  .btn-st {
+    position: relative;
+    max-width: 300px;
+    min-height: 80px;
+    padding: 30px 0;
+    font-size: 1.1em;
+    background-color: #ffffff;
+    border: 1px solid #b8b8b8;
+    border-radius: 40px;
+    box-sizing: border-box;
+  }
+
+  .box-one .btn-st {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .btn-st i {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-width: 8px;
+  }
+
+  .btn-st:hover i {
+    box-shadow: 0 0 10px 5px #c5c2c1;
+  }
+
+  .btn-st.left-side {
+    padding-right: 100px;
+  }
+
+  .btn-st.left-side i {
+    right: -50px;
+    top: -22px;
+  }
+
+  .btn-st.right-side {
+    padding-left: 100px;
+  }
+
+  .btn-st.right-side i {
+    left: -50px;
+    top: -22px;
+  }
+
+  .btn-st span {
+    font-size: 20px;
+  }
+
+  .btn-oq {
+    display: none;
+  }
+
   /*--------------------------------------------------------------
   # Footer
   --------------------------------------------------------------*/
+
+  .cons label,
+  .cons button {
+    display: inline-block;
+    width: 30%;
+    margin-top: 3em;
+    margin-bottom: 2.7em;
+  }
+
+  .cons label.cons-phone {
+    margin: 0 4.5%;
+  }
+
+  .cons .cons-name::after,
+  .cons .cons-phone::after {
+    width: 25px;
+    height: 25px;
+  }
 
 }
 
@@ -396,6 +601,10 @@ body {
   /*--------------------------------------------------------------
   # Typography
   --------------------------------------------------------------*/
+
+  .container {
+    max-width: 1024px;
+  }
 
   /*--------------------------------------------------------------
   # Header
@@ -422,33 +631,153 @@ body {
   # Header
   --------------------------------------------------------------*/
 
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
   /*--------------------------------------------------------------
   # Content
   --------------------------------------------------------------*/
+
+  .main-screen .wrap {
+    position: relative;
+    max-width: 1024px;
+    height: 450px;
+    margin-top: 2em;
+    background: url('../img/bg_screen.png') no-repeat 50% 0;
+    background-size: contain;
+  }
+
+  .box-screen.box-one {
+    top: 22%;
+    right: 68%;
+  }
+
+  .box-screen.box-two {
+    top: 22%;
+    left: 68%;
+  }
+
+  .box-screen.box-three {
+    bottom: 13%;
+    right: 68%;
+  }
+
+  .box-screen.box-four {
+    bottom: 13%;
+    left: 68%;
+  }
 
   /*--------------------------------------------------------------
   # Footer
   --------------------------------------------------------------*/
 
+  .cons label, .cons button {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
 }
 
-/*=================== for MAC 1600px ===========================*/
-@media screen and (min-width: 1600px) {
+/*=================== for MAC 1920px ===========================*/
+@media screen and (min-width: 1920px) {
 
   /*--------------------------------------------------------------
   # Typography
   --------------------------------------------------------------*/
 
+  body {
+    overflow-y: hidden;
+  }
+
   /*--------------------------------------------------------------
   # Header
   --------------------------------------------------------------*/
+
+  header::after {
+    width: 1024px;
+    margin: auto;
+  }
+
+  header .container {
+    max-width: 1700px;
+  }
+
+  header .header-title {
+    width: 1600px;
+  }
 
   /*--------------------------------------------------------------
   # Content
   --------------------------------------------------------------*/
 
+  .main-screen .wrap {
+    width: 1024px;
+    height: 800px;
+    margin: 0;
+  }
+
+  .box-screen {
+    width: 330px;
+  }
+
+  .box-screen.box-one {
+    top: 35%;
+    right: 85%;
+  }
+
+  .box-screen.box-two {
+    top: 35%;
+    left: 85%;
+  }
+
+  .box-screen.box-three {
+    bottom: 20%;
+    right: 83%;
+  }
+
+  .box-screen.box-four {
+    bottom: 20%;
+    left: 83%;
+  }
+
   /*--------------------------------------------------------------
   # Footer
   --------------------------------------------------------------*/
+
+  footer {
+    position: relative;
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1em;
+    border-radius: 8px;
+  }
+
+  footer::after,
+  footer::before {
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    background-color: #504f4f;
+    border-radius: 7px;
+    content: '';
+  }
+
+  footer::after {
+    z-index: -1;
+    transform: rotate(60deg);
+    top: 65px;
+    right: -112px;
+  }
+
+  footer::before {
+    transform: rotate(-60deg);
+    top: 65px;
+    left: -112px;
+  }
 
 }
