@@ -267,7 +267,7 @@ body {
   padding-left: 10%;
 }
 
-.btn-st i {
+.btn-st::before  {
   display: block;
   width: 60px;
   height: 60px;
@@ -277,27 +277,48 @@ body {
   background-color: #504f4f;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  content: '';
 }
 
-.btn-st:hover i,
-.btn-st:active i {
+.btn-st:hover::before,
+.btn-st:active::before {
   background-color: #ff0000;
 }
 
-.btn-st i.icon_police {
+.btn-st.icon_police::before {
   background-image: url('../img/icon_police.png');
 }
 
-.btn-st i.icon_health {
+.btn-st.icon_health::before {
   background-image: url('../img/icon_health.png');
 }
 
-.btn-st i.icon_cars {
+.btn-st.icon_cars::before {
   background-image: url('../img/icon_cars.png');
 }
 
-.btn-st i.icon_weight {
+.btn-st.icon_weight::before {
   background-image: url('../img/icon_weight.png');
+}
+
+.st-list {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 99;
+  padding: 0.5em;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #b8b8b8;
+  border-radius: 5px;
+}
+
+.st-list li {
+  margin-top: 0.2em;
+}
+
+.st-list a:hover,
+.st-list a:active {
+  color: #ff0000;
 }
 
 .main-screen .btn-phone {
@@ -314,7 +335,9 @@ body {
 }
 
 .btn-oq,
-.cons button {
+.cons button,
+.list_parents-btn,
+.screen-result-btn {
   display: block;
   width: 100%;
   margin: auto;
@@ -328,6 +351,110 @@ body {
   color: #ffffff;
   background-color: #ff0000;
 }
+
+.screen-result {
+  display: none;
+}
+
+/*--------------------------second screen---------------------------*/
+
+.screen-header,
+.screen-list_childs {
+  display: none;
+}
+
+.screen-title {
+  margin-bottom: 1.5em;
+  padding: 1em;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-family: 'plumb-medium', 'Arial', sans-serif;
+  background-color: #ffffff;
+  border: 1px solid #5f5f60;
+  border-radius: 40px;
+}
+
+.screen-title p {
+  margin: 0;
+}
+
+.screen-title .color-text {
+  display: block;
+  font-size: 1.2em;
+  font-family: 'plumb-bold', 'Arial', sans-serif;
+}
+
+.list_parents-btn,
+.screen-result-btn {
+  margin-bottom: 1em;
+  padding: 0.5em 0;
+}
+
+.screen-result {
+  display: block;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #5f5f60;
+}
+
+/*-----------------third screen--------------------------------*/
+
+.screen-list_parents > li {
+  position: relative;
+}
+
+.screen-list_childs {
+  position: absolute;
+  z-index: 66;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 0.5em;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid #5f5f60;
+  border-radius: 6px;
+}
+
+.screen-list_childs > li {
+  padding-left: 35px;
+  margin-bottom: 10px;
+}
+
+.checkbox {
+  position: relative;
+  text-align: left;
+}
+
+.checkbox input {
+  display: none;
+}
+
+.checkbox:hover {
+  cursor: pointer;
+  color: #ff0000;
+}
+
+.checkbox input[type="checkbox"] + .checkbox-indicator {
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 25px;
+  height: 25px;
+  background: url("../img/icon_notchecked.png") no-repeat 0 0;
+  background-size: contain;
+}
+
+.checkbox input[type="checkbox"]:checked + .checkbox-indicator {
+  position: absolute;
+  top: -2px;
+  left: -30px;
+  width: 27px;
+  height: 27px;
+  background: url("../img/icon_checked.png") no-repeat 0 0;
+  background-size: contain;
+}
+
 
 /*--------------------------------------------------------------
 # Footer
@@ -534,14 +661,14 @@ footer {
     padding-bottom: 18px;
   }
 
-  .btn-st i {
+  .btn-st::before {
     position: absolute;
     width: 100px;
     height: 100px;
     border-width: 8px;
   }
 
-  .btn-st:hover i {
+  .btn-st:hover::before {
     box-shadow: 0 0 10px 5px #c5c2c1;
   }
 
@@ -549,7 +676,7 @@ footer {
     padding-right: 100px;
   }
 
-  .btn-st.left-side i {
+  .btn-st.left-side::before {
     right: -50px;
     top: -22px;
   }
@@ -558,7 +685,7 @@ footer {
     padding-left: 100px;
   }
 
-  .btn-st.right-side i {
+  .btn-st.right-side::before {
     left: -50px;
     top: -22px;
   }
@@ -567,13 +694,104 @@ footer {
     font-size: 20px;
   }
 
+  .st-list {
+    position: absolute;
+    top: 95%;
+  }
+
   .btn-oq {
     display: none;
   }
 
-  .st-list {
+  /*-------------------------first-screen------------------------------*/
+
+  .screen-header {
     position: absolute;
+    top: 0;
+    left: 35%;
+    display: block;
+    width: 38%;
+    text-align: center;
+    font-size: 2em;
+    font-family: 'plumbc-regular', 'Arial', sans-serif;
   }
+
+  .screen-header .big-title {
+    display: block;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    font-family: 'plumbc-bold', 'Arial', sans-serif;
+  }
+
+  .screen-title {
+    width: 600px;
+    margin: 1.5em auto;
+    font-size: 2em;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+
+  .screen-list_parents {
+    text-align: center;
+  }
+
+  .screen-list_parents > li {
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+    max-width: 300px;
+    margin-right: 8%;
+  }
+
+  .list_parents-btn {
+    position: relative;
+    max-width: 300px;
+    min-height: 80px;
+    padding: 20px 0;
+    padding-right: 3em;
+    padding-left: 0.5em;
+    font-size: 20px;
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #b8b8b8;
+    border-radius: 40px;
+    box-sizing: border-box;
+  }
+
+  .list_parents-btn::before  {
+    position: absolute;
+    right: -50px;
+    top: -22px;
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0.5em auto;
+    border: 4px solid #f2eae8;
+    border-radius: 50%;
+    background-color: #504f4f;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    content: '';
+  }
+
+  .list_parents-btn:hover::before,
+  .list_parents-btn:active::before {
+    background-color: #ff0000;
+    box-shadow: 0 0 10px 5px #c5c2c1;
+  }
+
+  .screen-result {
+    min-height: 80px;
+    padding: 0.7em;
+    box-sizing: border-box;
+  }
+
+  .screen-result,
+  .screen-result-btn {
+    display: inline-block;
+    width: 30%;
+    margin-left: 2%;
+  }
+
 
   /*--------------------------------------------------------------
   # Footer
@@ -788,4 +1006,8 @@ footer {
 
 .show {
   display: block;
+}
+
+.hide {
+  display: none;
 }
