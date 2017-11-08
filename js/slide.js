@@ -16,9 +16,12 @@ var resultS = document.querySelector(".screen-result.success");
 var resultF = document.querySelector(".screen-result.fail");
 var wrapScreen = document.querySelectorAll(".wrap-list_parents");
 var popup = document.querySelector(".popup-question");
+var popupVideo = document.querySelector(".popup-question-video");
 var winPopup = document.querySelector(".wrap-win");
 var close = popup.querySelector(".popup-question-close");
+var closeVideo = popupVideo.querySelector(".popup-video-close");
 var footer = document.querySelector("footer");
+var playerBtn = document.querySelector(".btn-ytplay");
 var z1 = firstBtnTest.length;
 var z2 = secondBtnTest.length;
 var z3 = thirdBtnTest.length;
@@ -173,6 +176,7 @@ window.addEventListener("keydown", function(event) {
     if (popup.classList.contains("modal-content-show")) {
 
       removePopup();
+      removeVideo();
 
     }
 
@@ -185,10 +189,36 @@ winPopup.addEventListener("click", function(event) {
   if (winPopup.classList.contains("modal-content-show")) {
 
     removePopup();
+    removeVideo();
 
   }
 
 });
+
+playerBtn.addEventListener('click', function(evt) {
+  evt.preventDefault();
+  popupVideo.classList.add("modal-content-show");
+  winPopup.classList.add("modal-content-show");
+  videoBox = '<iframe src="' + playerBtn.href + '" frameborder="0" allowfullscreen></iframe>';
+  popupVideo.insertAdjacentHTML('afterbegin', videoBox);
+});
+
+  closeVideo.addEventListener("click", function(event) {
+
+    event.preventDefault();
+
+    removeVideo();
+
+  });
+
+  function removeVideo() {
+    popupVideo.classList.remove("modal-content-show");
+    winPopup.classList.remove("modal-content-show");
+    var videoScreen = popupVideo.querySelector("iframe");
+    videoScreen.src = "#";
+    popupVideo.removeChild(videoScreen);
+  }
+
 
 $(document).ready(function() {
 
