@@ -9,7 +9,7 @@ var firstScreen = document.querySelectorAll(".test-screen");
 var resultBtn = document.querySelector("#result-test");
 var newBtn = document.querySelector("#new-test");
 var mainScreen = document.querySelector(".main-screen");
-var topFooter = document.querySelector("footer");
+var topFooter = document.querySelector(".footer-line");
 var bottomFooter = document.querySelector(".bottom-footer");
 var checkboxList = document.querySelectorAll(".check-input");
 var resultS = document.querySelector(".screen-result.success");
@@ -35,6 +35,7 @@ if (!navigator.cookieEnabled) {
 
 var TENDAYS = 10 * 24 * 60 * 60 * 1000;
 var cDate = Date.now() + TENDAYS;
+var phoneIndicator = 1;
 var expiresDate = new Date(cDate);
 
 
@@ -54,7 +55,6 @@ for (var i = 0; i < z1; i++) {
      mainScreen.classList.add("hide");
      screenHeader.classList.remove("hide");
      firstBtn.classList.add("show");
-     newBtn.classList.add("show");
    } else {
         return;
      }
@@ -78,6 +78,7 @@ for (var i = 0; i < z2; i++) {
        showPopup();
      } else {
        bottomFooter.classList.add("hide");
+       topFooter.classList.add("hide");
        boxFS = firstScreen[x];
        boxFS.classList.add("show");
        firstBtn.classList.remove("show");
@@ -103,9 +104,7 @@ for (var i = 0; i < z3; i++) {
      }
      thirdCurrentList = scListChilds[x];
      thirdCurrentList.classList.add("show");
-    for (var i = 0; i < z3; i++) {
-      thirdBtnTest[i].classList.add("hide");
-    };
+      thirdBtnTest[x].classList.add("hide");
       resultBtn.classList.add("show");
    } else {
         return;
@@ -140,7 +139,8 @@ resultBtn.addEventListener('click', function(evt) {
   };
   for (var i = 0; i < z3; i++) {
      scListChilds[i].classList.remove("show");
-  }
+     thirdBtnTest[i].classList.add("hide");
+  };
   if (resultF.classList.contains("show-result")) {
     resultF.classList.remove("show-result");
   };
@@ -150,9 +150,13 @@ resultBtn.addEventListener('click', function(evt) {
   if (!res) {
     resultF.classList.add("show-result");
     bottomFooter.classList.remove("hide");
+    footer.classList.remove("hide");
+    topFooter.classList.remove("hide");
   } else {
     resultS.classList.add("show-result");
-    topFooter.classList.add("hide");
+    bottomFooter.classList.remove("hide");
+    footer.classList.remove("hide");
+    topFooter.classList.remove("hide");
   };
   for (var i = 0; i < z5; i++) {
     wrapScreen[i].classList.add("show");
@@ -254,7 +258,3 @@ $(document).ready(function() {
 	});
 
 });
-
-// access wow
-
-new WOW().init();

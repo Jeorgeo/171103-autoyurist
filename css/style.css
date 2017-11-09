@@ -445,6 +445,9 @@ body {
   font-size: 0.7em;
   font-family: 'plumb-medium', 'Arial', sans-serif;
   box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid #5f5f60;
+  border-radius: 6px;
 }
 
 .screen-list_childs > li {
@@ -608,7 +611,7 @@ footer {
   }
 
   main {
-    min-height: 440px;
+    min-height: 550px;
   }
 
 
@@ -958,11 +961,12 @@ footer {
   .screen-result,
   .screen-result-btn {
     width: 30%;
-    margin-left: 2%;
   }
 
   .screen-result-btn {
     float: left;
+    margin-right: 2%;
+    padding: 1em 0.5em;
   }
 
   /*------------------------third screen------------------------*/
@@ -1091,8 +1095,9 @@ footer {
 
   .main-screen .wrap {
     position: relative;
+    width: 555px;
     max-width: 1024px;
-    height: 520px;
+    height: 555px;
     margin-top: 0.1em;
     background: url('../img/bg_screen.png') no-repeat 50% 0;
     background-size: contain;
@@ -1120,7 +1125,7 @@ footer {
 
   .main-screen .btn-ytplay {
     position: absolute;
-    top: 51%;
+    top: 36%;
     left: 46%;
   }
 
@@ -1136,9 +1141,9 @@ footer {
     background-color: transparent;
   }
 
-  footer::after {
+  .footer-line {
     position: absolute;
-    top: 80%;
+    top: 100%;
     left: 0;
     display: block;
     width: 100%;
