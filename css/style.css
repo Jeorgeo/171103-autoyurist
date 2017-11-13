@@ -231,6 +231,10 @@ header .header-title {
   font-family: 'plumbc-bold', 'Arial', sans-serif;
 }
 
+.form__сonsent label a {
+  text-decoration: underline;
+}
+
 
 /*--------------------------------------------------------------
 # Content
@@ -246,16 +250,6 @@ body {
   width: 100%;
   max-width: 400px;
   margin: auto;
-}
-
-.main-screen .wrap .btn-ytplay {
-  position: absolute;
-  top: 41%;
-  left: 41%;
-  display: block;
-  width: 100px;
-  height: 100px;
-  font-size: 0;
 }
 
 .test-screen,
@@ -324,19 +318,17 @@ body {
   background-image: url('../img/icon_weight.png');
 }
 
-.st-list {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  z-index: 99;
-  padding: 0.5em;
-  background-color: rgba(255, 255, 255, 0.85);
-  border: 1px solid #b8b8b8;
-  border-radius: 5px;
-}
-
 .st-list li {
   margin: 0.3em 0;
+  padding: 0.5em 1em;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid #b8b8b8;
+  border-radius: 30px;
+}
+
+.st-list li a {
+  display: block;
+  width: 100%;
 }
 
 .st-list a:hover,
@@ -357,7 +349,7 @@ body {
   background: #ff0000 url('../img/icon_phone-w.png') no-repeat 50% 50%;
 }
 
-.btn-oq,
+.btn-ytplay,
 .cons button,
 .list_parents-btn,
 .screen-result-btn {
@@ -375,9 +367,25 @@ body {
   background-color: #ff0000;
 }
 
+.btn-ytplay {
+  position: relative;
+}
+
+.btn-ytplay::before {
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  display: block;
+  width: 36px;
+  height: 36px;
+  background: url('../img/bg_icon-video.png') no-repeat 50% 50%;
+  background-size: contain;
+  content: '';
+}
+
 .list_parents-btn,
 .screen-result-btn {
-  width: 80%;
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -437,6 +445,9 @@ body {
   font-size: 0.7em;
   font-family: 'plumb-medium', 'Arial', sans-serif;
   box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid #5f5f60;
+  border-radius: 6px;
 }
 
 .screen-list_childs > li {
@@ -480,22 +491,51 @@ body {
   background-size: contain;
 }
 
+.screen-result {
+  position: relative;
+  min-height: 80px;
+  padding: 1em;
+  box-sizing: border-box;
+  padding-left: 5em;
+  text-transform: uppercase;
+  font-size: 1.1em;
+}
+
+.screen-result.success::after,
+.screen-result.fail::after {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: url('../img/icon_salut.png') no-repeat 50% 50%;
+  background-size: contain;
+  content: '';
+}
+
+.screen-result.fail::after {
+  background: url('../img/icon_stop.png') no-repeat 50% 50%;
+  background-size: contain;
+}
+
 
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 
 footer {
+  display: block;
   margin-top: 1em;
-  padding: 0.01em 0 1em 0;
-
+  padding: 1em 0 1em 0;
+  background-color: #504f4f;
 }
 
 .bottom-footer {
   background-color: #504f4f;
 }
 
-.top-footer,
+.screen-result-btn,
 .screen-result {
   display: none;
 }
@@ -570,6 +610,10 @@ footer {
     max-width: 960px;
   }
 
+  main {
+    min-height: 550px;
+  }
+
 
   /*--------------------------------------------------------------
   # Header
@@ -638,11 +682,13 @@ footer {
 
   body {
     background: url('../img/bg_main.jpg') no-repeat 50% 0;
-    background-size: cover;
   }
 
   .main-screen .wrap {
     position: relative;
+  }
+
+  .main-screen .wrap {
     width: 550px;
     height: 465px;
     background: url('../img/bg_screen.png') no-repeat 50% 0;
@@ -680,8 +726,8 @@ footer {
 
   .btn-st {
     position: relative;
-    max-width: 300px;
-    min-height: 80px;
+    max-width: 280px;
+    min-height: 75px;
     padding: 30px 0;
     font-size: 18px;
     background-color: #ffffff;
@@ -762,20 +808,37 @@ footer {
   }
 
   .st-list {
-    position: absolute;
-    top: 95%;
+    width: 47%;
+    margin: 1em auto;
   }
 
-  .btn-oq {
+  .st-list li {
+    margin: 1.5em 0;
+    font-size: 1.3em;
+  }
+
+  .main-screen .btn-ytplay {
+    position: absolute;
+    top: 34%;
+    left: 45%;
+    display: block;
+    width: 100px;
+    height: 100px;
+    font-size: 0;
+    background: transparent;
+  }
+
+  .main-screen .btn-ytplay::before {
+    display: none;
+  }
+
+  .screen-result-btn {
     display: none;
   }
 
   /*-------------------------first-screen------------------------------*/
 
   .screen-header {
-    position: absolute;
-    top: 0;
-    left: 35%;
     display: block;
     width: 38%;
     margin: auto;
@@ -841,13 +904,12 @@ footer {
     width: 28%;
     max-width: 300px;
     margin-right: 5%;
-    margin-bottom: 2.5em;
   }
 
   .list_parents-btn {
     position: relative;
     max-width: 300px;
-    min-height: 80px;
+    min-height: 70px;
     padding: 20px 0;
     padding-right: 4em;
     padding-left: 0.5em;
@@ -864,8 +926,8 @@ footer {
     right: -50px;
     top: -22px;
     display: block;
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     margin: 0.5em auto;
     border: 4px solid #f2eae8;
     border-radius: 50%;
@@ -896,42 +958,15 @@ footer {
     box-shadow: 0 0 10px 5px #c5c2c1;
   }
 
-  .screen-result {
-    position: relative;
-    min-height: 80px;
-    padding: 1em;
-    box-sizing: border-box;
-    padding-left: 5em;
-    text-transform: uppercase;
-    font-size: 1.1em;
-  }
-
-  .screen-result.success::after,
-  .screen-result.fail::after {
-    position: absolute;
-    top: 12px;
-    left: 16px;
-    display: block;
-    width: 50px;
-    height: 50px;
-    background: url('../img/icon_salut.png') no-repeat 50% 50%;
-    background-size: contain;
-    content: '';
-  }
-
-  .screen-result.fail::after {
-    background: url('../img/icon_stop.png') no-repeat 50% 50%;
-    background-size: contain;
-  }
-
   .screen-result,
   .screen-result-btn {
     width: 30%;
-    margin-left: 2%;
   }
 
   .screen-result-btn {
-    display: inline-block;
+    float: left;
+    margin-right: 2%;
+    padding: 1em 0.5em;
   }
 
   /*------------------------third screen------------------------*/
@@ -941,7 +976,6 @@ footer {
   }
 
   .screen-list_childs {
-    position: absolute;
     z-index: 66;
     top: 100%;
     left: 0;
@@ -1019,6 +1053,16 @@ footer {
   # Content
   --------------------------------------------------------------*/
 
+  .main-screen .btn-ytplay {
+    position: absolute;
+    top: 43%;
+    left: 46%;
+  }
+
+  .list_parents-btn {
+    margin-bottom: 1.5em;
+  }
+
   /*--------------------------------------------------------------
   # Footer
   --------------------------------------------------------------*/
@@ -1051,8 +1095,9 @@ footer {
 
   .main-screen .wrap {
     position: relative;
+    width: 555px;
     max-width: 1024px;
-    height: 520px;
+    height: 555px;
     margin-top: 0.1em;
     background: url('../img/bg_screen.png') no-repeat 50% 0;
     background-size: contain;
@@ -1078,8 +1123,10 @@ footer {
     left: 71%;
   }
 
-  .screen-header {
-    position: static;
+  .main-screen .btn-ytplay {
+    position: absolute;
+    top: 36%;
+    left: 46%;
   }
 
   /*--------------------------------------------------------------
@@ -1091,21 +1138,18 @@ footer {
     left: 0;
     width: 100%;
     padding: 0;
+    background-color: transparent;
   }
 
-  footer::after {
+  .footer-line {
     position: absolute;
-    top: 80%;
+    top: 100%;
     left: 0;
     display: block;
     width: 100%;
     height: 130px;
     background-color: #504f4f;
     content: '';
-  }
-
-  footer.transparent::after {
-    background-color: transparent;
   }
 
   .cons label, .cons button {
@@ -1178,6 +1222,10 @@ footer {
   # Content
   --------------------------------------------------------------*/
 
+  main {
+    min-height: 668px;
+  }
+
   .main-screen .wrap {
     width: 1024px;
     height: 800px;
@@ -1208,6 +1256,13 @@ footer {
     left: 83%;
   }
 
+  .main-screen .btn-ytplay {
+    top: 38%;
+    left: 47%;
+    width: 150px;
+    height: 150px;
+}
+
   /*--------------------------------------------------------------
   # Footer
   --------------------------------------------------------------*/
@@ -1223,7 +1278,11 @@ footer {
   }
 
   footer {
-    margin-top: 1.5em;
+    margin-top: 2.5em;
+  }
+
+  footer::after {
+    top: 100%;
   }
 
 }
@@ -1284,7 +1343,7 @@ footer {
   position: fixed;
   left: 0;
   right: 0;
-  top: 50px;
+  top: 10px;
   bottom: 0;
   margin: 5px auto;
   padding-bottom: 1em;
@@ -1422,10 +1481,19 @@ footer {
   box-sizing: border-box;
 }
 
+@media screen and (min-width: 480px) {
+  .popup-question,
+  .popup-question-video {
+    width: 450px;
+    height: 290px;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .popup-question,
   .popup-question-video {
     width: 820px;
+    height: 500px;
   }
 
   .order-form {
