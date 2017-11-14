@@ -120,7 +120,7 @@ html, body {
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	min-width: 100%;
 	min-height: 100%;
 	font-family: 'plumb-regular','Arial' ,sans-serif;
@@ -525,7 +525,11 @@ body {
 --------------------------------------------------------------*/
 
 footer {
-  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: none;
+  width: 100%;
   margin-top: 1em;
   padding: 1em 0 1em 0;
   background-color: #504f4f;
@@ -596,6 +600,10 @@ footer {
   /*--------------------------------------------------------------
   # Footer
   --------------------------------------------------------------*/
+
+  footer {
+    display: block;
+  }
 
 }
 
@@ -1032,6 +1040,20 @@ footer {
     height: 25px;
   }
 
+  footer .form__сonsent {
+    margin-top: -1.5em;
+  }
+
+  footer .form__сonsent input {
+    width: 5%;
+    margin-right: 0%;
+  }
+
+  footer label.cloud  {
+    text-align: left;
+    color: #ffffff;
+  }
+
 }
 
 /*=================== for PC 1280px ===========================*/
@@ -1061,6 +1083,13 @@ footer {
 
   .list_parents-btn {
     margin-bottom: 1.5em;
+  }
+
+  .cons label, .cons button {
+    display: inline-block;
+    width: 27%;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
   }
 
   /*--------------------------------------------------------------
@@ -1136,6 +1165,7 @@ footer {
   footer {
     position: absolute;
     left: 0;
+    z-index: 9999;
     width: 100%;
     padding: 0;
     background-color: transparent;
@@ -1359,6 +1389,38 @@ footer {
   display: none;
 }
 
+.popup-question-policy {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 10px;
+  bottom: 0;
+  z-index: 99999;
+  width: 90%;
+  max-width: 500px;
+  height: 450px;
+  margin: 5% auto;
+  padding: 1.5em;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  font-size: 1em;
+  color: #000000;
+  background: rgba(255, 255, 255, 0.9);
+  background-size: cover;
+  border-radius: 5px;
+  opacity: 0;
+  display: none;
+}
+
+.popup-question-policy a {
+  color: #ff0000;
+}
+
+.popup-question-policy a:hover,
+.popup-question-policy a:active {
+  border-bottom: 1px dotted #ff0000;
+}
+
 .popup-question-video iframe {
   width: 100%;
   max-width: 100%;
@@ -1370,7 +1432,8 @@ footer {
 }
 
 .popup-question-close,
-.popup-video-close {
+.popup-video-close,
+.popup-policy-close {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -1388,7 +1451,9 @@ footer {
 .popup-question-close::after,
 .popup-question-close::before,
 .popup-video-close::after,
-.popup-video-close::before {
+.popup-video-close::before,
+.popup-policy-close::after,
+.popup-policy-close::before {
   position: absolute;
   top: 13px;
   left: 5px;
@@ -1399,13 +1464,20 @@ footer {
   content: '';
 }
 
+.popup-policy-close::after,
+.popup-policy-close::before {
+  background-color: #000000;
+}
+
 .popup-question-close::before,
-.popup-video-close::before {
+.popup-video-close::before,
+.popup-policy-close::before {
   transform: rotate(-45deg);
 }
 
 .popup-question-close:hover,
-.popup-video-close:hover {
+.popup-video-close:hover,
+.popup-policy-close:hover {
   cursor: pointer;
   animation-name: rotate-up1;
   animation-duration: 0.3s;

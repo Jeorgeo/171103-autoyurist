@@ -17,9 +17,12 @@ var resultF = document.querySelector(".screen-result.fail");
 var wrapScreen = document.querySelectorAll(".wrap-list_parents");
 var popup = document.querySelector(".popup-question");
 var popupVideo = document.querySelector(".popup-question-video");
+var popupPolicy = document.querySelector(".popup-question-policy");
 var winPopup = document.querySelector(".wrap-win");
+var linkPolicy = document.querySelectorAll(".linkPolicy");
 var close = popup.querySelector(".popup-question-close");
 var closeVideo = popupVideo.querySelector(".popup-video-close");
+var closePolicy = popupPolicy.querySelector(".popup-policy-close");
 var footer = document.querySelector("footer");
 var playerBtn = document.querySelector(".btn-ytplay");
 var screenHeader = document.querySelector(".screen-header");
@@ -123,6 +126,7 @@ function showPopup() {
 
 function removePopup() {
   popup.classList.remove("modal-content-show");
+  popupPolicy.classList.remove("modal-content-show");
   winPopup.classList.remove("modal-content-show");
 };
 
@@ -177,6 +181,24 @@ newBtn.addEventListener('click', function(evt) {
     removePopup();
 
   });
+
+for (var i = 0; i < linkPolicy.length; i++) {
+  linkPolicy[i].addEventListener("click", function(evt) {
+    evt.preventDefault();
+    winPopup.classList.add("modal-content-show");
+    popupPolicy.classList.add("modal-content-show");
+  });
+}
+
+
+
+closePolicy.addEventListener("click", function(evt) {
+  evt.preventDefault();
+  if (!popup.classList.contains("modal-content-show")) {
+    winPopup.classList.remove("modal-content-show");
+  };
+  popupPolicy.classList.remove("modal-content-show");
+});
 
 window.addEventListener("keydown", function(event) {
 
