@@ -77,7 +77,7 @@ for (var i = 0; i < z2; i++) {
         }
      }
      var phoneIndicator = Cookies.get('phone') || 2;
-     if (phoneIndicator == 2) {
+     if (phoneIndicator == 1) {
        showPopup();
      } else {
        bottomFooter.classList.add("hide");
