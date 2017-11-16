@@ -1,3 +1,24 @@
+/*!
+Theme Name: autoyurist
+Theme URI: http://hmwebs.ru
+Author: http://hmwebs.ru
+Author URI: http://hmwebs.ru
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: autoyurist
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+autoyurist is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
 
 
 /*--------------------------------------------------------------
@@ -18,52 +39,52 @@
 
 @font-face {
   font-family: 'plumb-regular'; /* Гарнитура шрифта */
-  src: url( "../fonts/plumb-regular.ttf" ); /* Путь к файлу со шрифтом */
+  src: url( "fonts/plumb-regular.ttf" ); /* Путь к файлу со шрифтом */
 }
 
 @font-face {
   font-family: 'plumb-medium'; /* Гарнитура шрифта */
-  src: url( "../fonts/plumb-medium.ttf" ); /* Путь к файлу со шрифтом */
+  src: url( "fonts/plumb-medium.ttf" ); /* Путь к файлу со шрифтом */
 }
 
 @font-face {
   font-family: 'plumb-light'; /* Гарнитура шрифта */
-  src: url( "../fonts/plumb-light.ttf" ); /* Путь к файлу со шрифтом */
+  src: url( "fonts/plumb-light.ttf" ); /* Путь к файлу со шрифтом */
 }
 
 @font-face {
   font-family: 'plumb-bold'; /* Гарнитура шрифта */
-  src: url( "../fonts/plumb-bold.ttf" ); /* Путь к файлу со шрифтом */
+  src: url( "fonts/plumb-bold.ttf" ); /* Путь к файлу со шрифтом */
 }
 
 @font-face {
   font-family: 'plumbc-black'; /* Гарнитура шрифта */
-  src: url( "../fonts/plumbc-black.ttf" ); /* Путь к файлу со шрифтом */
+  src: url( "fonts/plumbc-black.ttf" ); /* Путь к файлу со шрифтом */
 }
 
 @font-face {
   font-family: 'plumbc-regular'; /* Гарнитура шрифта */
-  src: url( "../fonts/plumbc-regular.ttf" ); /* Путь к файлу со шрифтом */
+  src: url( "fonts/plumbc-regular.ttf" ); /* Путь к файлу со шрифтом */
 }
 
 @font-face {
   font-family: 'plumbc-medium'; /* Гарнитура шрифта */
-  src: url( "../fonts/plumbc-medium.ttf" ); /* Путь к файлу со шрифтом */
+  src: url( "fonts/plumbc-medium.ttf" ); /* Путь к файлу со шрифтом */
 }
 
 @font-face {
   font-family: 'plumbc-light'; /* Гарнитура шрифта */
-  src: url( "../fonts/plumbc-light.ttf" ); /* Путь к файлу со шрифтом */
+  src: url( "fonts/plumbc-light.ttf" ); /* Путь к файлу со шрифтом */
 }
 
 @font-face {
   font-family: 'plumbc-bold'; /* Гарнитура шрифта */
-  src: url( "../fonts/plumbc-bold.ttf" ); /* Путь к файлу со шрифтом */
+  src: url( "fonts/plumbc-bold.ttf" ); /* Путь к файлу со шрифтом */
 }
 
 @font-face {
   font-family: 'plumbc-black'; /* Гарнитура шрифта */
-  src: url( "../fonts/plumbc-black.ttf" ); /* Путь к файлу со шрифтом */
+  src: url( "fonts/plumbc-black.ttf" ); /* Путь к файлу со шрифтом */
 }
 
 
@@ -71,15 +92,6 @@
 # Animation
 --------------------------------------------------------------*/
 
-@keyframes show-panel {
-  from { left: -235px; }
-  to   { left: 0; }
-}
-
-@keyframes hidden-panel {
-  from { left: 0; }
-  to   { left: -235px; }
-}
 
 @keyframes rotate-up {
   from { transform: rotate(0deg); }
@@ -241,7 +253,7 @@ header .header-title {
 --------------------------------------------------------------*/
 
 body {
-  background: url('../img/bg_main-s.jpg') repeat-y 50% 0;
+  background: url('img/bg_main-s.jpg') repeat-y 50% 0;
   background-size: cover;
 }
 
@@ -303,19 +315,19 @@ body {
 }
 
 .btn-st.icon_police::before {
-  background-image: url('../img/icon_police.png');
+  background-image: url('img/icon_police.png');
 }
 
 .btn-st.icon_health::before {
-  background-image: url('../img/icon_health.png');
+  background-image: url('img/icon_health.png');
 }
 
 .btn-st.icon_cars::before {
-  background-image: url('../img/icon_cars.png');
+  background-image: url('img/icon_cars.png');
 }
 
 .btn-st.icon_weight::before {
-  background-image: url('../img/icon_weight.png');
+  background-image: url('img/icon_weight.png');
 }
 
 .st-list li {
@@ -346,7 +358,7 @@ body {
   height: 88px;
   border-radius: 50%;
   font-size: 0;
-  background: #ff0000 url('../img/icon_phone-w.png') no-repeat 50% 50%;
+  background: #ff0000 url('img/icon_phone-w.png') no-repeat 50% 50%;
 }
 
 .btn-ytplay,
@@ -378,7 +390,7 @@ body {
   display: block;
   width: 36px;
   height: 36px;
-  background: url('../img/bg_icon-video.png') no-repeat 50% 50%;
+  background: url('img/bg_icon-video.png') no-repeat 50% 50%;
   background-size: contain;
   content: '';
 }
@@ -479,7 +491,7 @@ body {
   width: 25px;
   height: 25px;
   font-size: 0;
-  background: url("../img/icon_notchecked.png") no-repeat 0 0;
+  background: url("img/icon_notchecked.png") no-repeat 0 0;
   background-size: contain;
 }
 
@@ -490,7 +502,7 @@ body {
   width: 27px;
   height: 27px;
   font-size: 0;
-  background: url("../img/icon_checked.png") no-repeat 0 0;
+  background: url("img/icon_checked.png") no-repeat 0 0;
   background-size: contain;
 }
 
@@ -514,13 +526,13 @@ body {
   display: block;
   width: 50px;
   height: 50px;
-  background: url('../img/icon_salut.png') no-repeat 50% 50%;
+  background: url('img/icon_salut.png') no-repeat 50% 50%;
   background-size: contain;
   content: '';
 }
 
 .screen-result.fail::after {
-  background: url('../img/icon_stop.png') no-repeat 50% 50%;
+  background: url('img/icon_stop.png') no-repeat 50% 50%;
   background-size: contain;
 }
 
@@ -580,14 +592,24 @@ footer .cons input {
   width: 20px;
   height: 20px;
   content: '';
-  background: url('../img/icon_phone.png') no-repeat 50% 50%;
+  background: url('img/icon_phone.png') no-repeat 50% 50%;
   background-size: contain;
   opacity: 0.8;
 }
 
 .cons .cons-phone::after {
-  background: url('../img/icon_man.png') no-repeat 50% 50%;
+  background: url('img/icon_man.png') no-repeat 50% 50%;
   background-size: contain;
+}
+
+/*============== for smartfone 360px ===========================*/
+@media screen and (min-width: 360px) {
+  .main-screen .wrap {
+    margin-top: 2em;
+  }
+.box-screen {
+  min-height: 170px;
+  }
 }
 
 
@@ -605,6 +627,10 @@ footer .cons input {
   /*--------------------------------------------------------------
   # Content
   --------------------------------------------------------------*/
+
+  .box-screen {
+    min-height: 200px;
+  }
 
   /*--------------------------------------------------------------
   # Footer
@@ -629,6 +655,10 @@ footer .cons input {
 
   main {
     min-height: 550px;
+  }
+
+  body.overflow {
+    overflow-y: hidden;
   }
 
 
@@ -698,7 +728,7 @@ footer .cons input {
   --------------------------------------------------------------*/
 
   body {
-    background: url('../img/bg_main.jpg') no-repeat 50% 0;
+    background: url('img/bg_main.jpg') no-repeat 50% 0;
   }
 
   .main-screen .wrap {
@@ -708,7 +738,7 @@ footer .cons input {
   .main-screen .wrap {
     width: 550px;
     height: 465px;
-    background: url('../img/bg_screen.png') no-repeat 50% 0;
+    background: url('img/bg_screen.png') no-repeat 50% 0;
     background-size: contain;
   }
 
@@ -796,7 +826,7 @@ footer .cons input {
     display: block;
     width: 30px;
     height: 20px;
-    background: url('../img/arrow.png') no-repeat 50% 50%;
+    background: url('img/arrow.png') no-repeat 50% 50%;
     background-size: contain;
   }
 
@@ -805,18 +835,18 @@ footer .cons input {
   }
 
   .btn-st.left-side:hover .icon_text {
-    background: url('../img/arrow_h.png') no-repeat 50% 50%;
+    background: url('img/arrow_h.png') no-repeat 50% 50%;
     background-size: contain;
   }
 
   .btn-st.right-side:hover .icon_text {
-    background: url('../img/arrow_h-r.png') no-repeat 50% 50%;
+    background: url('img/arrow_h-r.png') no-repeat 50% 50%;
     background-size: contain;
   }
 
   .btn-st.right-side .icon_text {
     right: 65%;
-    background: url('../img/arrow-r.png') no-repeat 50% 50%;
+    background: url('img/arrow-r.png') no-repeat 50% 50%;
     background-size: contain;
   }
 
@@ -853,6 +883,10 @@ footer .cons input {
     display: none;
   }
 
+  .box-screen {
+    min-height: 125px;
+  }
+
   /*-------------------------first-screen------------------------------*/
 
   .screen-header {
@@ -885,7 +919,7 @@ footer .cons input {
     bottom: -30px;
     width: 30px;
     height: 40px;
-    background: url('../img/arrow_bottom.png') no-repeat 50% 50%;
+    background: url('img/arrow_bottom.png') no-repeat 50% 50%;
     background-size: contain;
   }
 
@@ -895,7 +929,7 @@ footer .cons input {
     bottom: 0;
     width: 60px;
     height: 40px;
-    background: url('../img/arrow_left.png') no-repeat 50% 50%;
+    background: url('img/arrow_left.png') no-repeat 50% 50%;
     background-size: contain;
     content: '';
   }
@@ -906,7 +940,7 @@ footer .cons input {
     bottom: 0;
     width: 60px;
     height: 40px;
-    background: url('../img/arrow_right.png') no-repeat 50% 50%;
+    background: url('img/arrow_right.png') no-repeat 50% 50%;
     background-size: contain;
     content: '';
   }
@@ -954,17 +988,17 @@ footer .cons input {
   }
 
   .list_parents-btn.icon1::before  {
-    background: #504f4f url('../img/icon_nodrive.png') no-repeat 50% 50%;
+    background: #504f4f url('img/icon_nodrive.png') no-repeat 50% 50%;
     background-size: 50%;
   }
 
   .list_parents-btn.icon2::before  {
-    background: #504f4f url('../img/icon_drink.png') no-repeat 50% 50%;
+    background: #504f4f url('img/icon_drink.png') no-repeat 50% 50%;
     background-size: 50%;
   }
 
   .list_parents-btn.icon3::before  {
-    background: #504f4f url('../img/icon_hospital.png') no-repeat 50% 50%;
+    background: #504f4f url('img/icon_hospital.png') no-repeat 50% 50%;
     background-size: 50%;
   }
 
@@ -1039,6 +1073,10 @@ footer .cons input {
     margin-bottom: 2.7em;
   }
 
+	.cons label.cloud {
+		margin-top: 0.5em;
+	}
+
   .cons label.cons-phone {
     margin: 0 4.5%;
   }
@@ -1088,6 +1126,10 @@ footer .cons input {
     position: absolute;
     top: 43%;
     left: 46%;
+  }
+
+  .main-screen .wrap {
+    margin-top: 0.1em;
   }
 
   .list_parents-btn {
@@ -1140,8 +1182,7 @@ footer .cons input {
     width: 555px;
     max-width: 1024px;
     height: 555px;
-    margin-top: 0.1em;
-    background: url('../img/bg_screen.png') no-repeat 50% 0;
+    background: url('img/bg_screen.png') no-repeat 50% 0;
     background-size: contain;
   }
 
@@ -1375,7 +1416,7 @@ footer .cons input {
 	border-radius: 5px;
   box-sizing: border-box;
   color: #000000;
-  background: url('../img/bg_main.jpg') no-repeat 50% 50%;
+  background: url('img/bg_main.jpg') no-repeat 50% 50%;
   background-size: cover;
   z-index: 99999;
   opacity: 0;
@@ -1538,7 +1579,7 @@ footer .cons input {
   display: block;
   width: 30px;
   height: 30px;
-  background: url('../img/icon_phone-r.png') no-repeat 50% 50%;
+  background: url('img/icon_phone-r.png') no-repeat 50% 50%;
   content: '';
 }
 
@@ -1610,4 +1651,8 @@ footer .cons input {
   animation-name: hide-popup;
   animation-duration: 0.4s;
   opacity: 0;
+}
+
+footer.overflow {
+  position: relative;
 }

@@ -28,6 +28,7 @@ var closePolicy = popupPolicy.querySelector(".popup-policy-close");
 var footer = document.querySelector("footer");
 var playerBtn = document.querySelector(".btn-ytplay");
 var screenHeader = document.querySelectorAll(".screen-header");
+var bodyOverflow = document.querySelector(".overflow");
 var z1 = firstBtnTest.length;
 var z2 = secondBtnTest.length;
 var z3 = thirdBtnTest.length;
@@ -60,7 +61,9 @@ for (var i = 0; i < z1; i++) {
      firstBtn = stList[x];
      mainScreen.classList.add("hide");
      screenHeader[x].classList.remove("hide");
-       firstBtn.classList.add("show");
+     firstBtn.classList.add("show");
+     bodyOverflow.classList.remove("overflow");
+     footer.classList.add("overflow");
    } else {
         return;
      }
@@ -135,29 +138,25 @@ function showTest(current) {
         break;
      }
   }
-  if (x!=6) {
-    currentscreenHeader = screenHeader[x];
-  } else {
-    currentscreenHeader = screenHeader[3];
-  }
+  boxFS = firstScreen[x];
   var phoneIndicator = Cookies.get('phone') || 2;
-  if (phoneIndicator == 1) {
+  console.log(phoneIndicator);
+  if (phoneIndicator == 2) {
     showPopup();
   } else {
-    boxFS = firstScreen[x];
-    bottomFooter.classList.add("hide");
-    topFooter.classList.add("hide");
-    boxFS.classList.add("show");
-    firstBtn.classList.remove("show");
-    for (var i = 0; i < screenHeader[i].length; i++) {
-      screenHeader[i].classList.add("hide");
-    };
-    currentscreenHeader.classList.remove("hide");
+    showScreen();
   };
 } else {
      return;
   }
 };
+
+function showScreen() {
+  bottomFooter.classList.add("hide");
+  topFooter.classList.add("hide");
+  boxFS.classList.add("show");
+  firstBtn.classList.remove("show");
+}
 
 resultBtn.addEventListener('click', function(evt) {
   evt.preventDefault();
@@ -208,6 +207,8 @@ resultBtn.addEventListener('click', function(evt) {
   };
   resultBtn.classList.add("hide");
   newBtn.classList.add("show");
+  bodyOverflow.classList.add("overflow");
+  footer.classList.remove("overflow");
 });
 
 newBtn.addEventListener('click', function(evt) {
@@ -308,6 +309,7 @@ $(document).ready(function() {
 		}).done(function() {
 			removePopup();
       Cookies.set('phone', phoneIndicator, { expires: expiresDate });
+      showScreen();
 		});
 		return false;
 	});
