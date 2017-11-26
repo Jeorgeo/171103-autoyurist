@@ -26,7 +26,7 @@
 				<label for="phone" class="cons-phone">
 					<input id="phone-c"  type="text" name="phone" placeholder="Введите телефон">
 				</label>
-				<button type="submit" name="submit">Получить консультацию</button>
+				<button type="submit" name="submit" onclick="yaCounter46670718.reachGoal('CONSUL'); return true;">Получить консультацию</button>
 				<div class="form__сonsent">
 					<input id="сonsent-p" class="cloud-form__сonsent" type="checkbox" name="сonsent" checked required>
 					<label class="cloud" for="сonsent-p">
@@ -63,7 +63,7 @@
 				value="" placeholder="Введите номер" required>
 			</label>
 			<div class="box-form">
-				<button id="submit" class="form__submit" type="submit" name="submit">
+				<button id="submit" class="form__submit" type="submit" name="submit" onclick="yaCounter46670718.reachGoal('TEST'); return true;">
 					Продолжить тест
 				</button>
 				<div class="form__сonsent">

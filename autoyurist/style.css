@@ -205,7 +205,7 @@ header .header-title {
 .contacts-box a {
   display: block;
   width: 100%;
-  font-size: 1.6em;
+  font-size: 1.5em;
 }
 
 .contacts-box a:nth-child(1) {
@@ -376,6 +376,11 @@ body {
   border: none;
   border-radius: 3px;
   color: #ffffff;
+  background-color: #ff0000;
+}
+
+.screen-result-btn {
+/*  background-color: rgb(129, 181, 55);*/
   background-color: #ff0000;
 }
 
